@@ -1,45 +1,35 @@
-# La clase Vehiculo representa el molde (plantilla) base para crear objetos vehículo.
-# Declaración de atributos con sus tipos.
+# Definición de la clase base Vehiculo para representar los vehículos en el sistema
 class Vehiculo:
-    __patente: str
-    __anio: int
-    __en_taller: bool
-
-    # Constructor que inicializa una nueva instancia de la clase Vehiculo
+    # Método constructor que inicializa los atributos de instancia de Vehiculo
     def __init__(self, patente: str, anio: int) -> None:
-        # Atributo privado encapsulado con doble guión bajo
-        self.__patente: str = patente
-        # Atributo privado encapsulado con doble guión bajo
-        self.__anio: int = anio
-        # Inicializa siempre en False ya que un vehículo recién registrado no parte dentro del taller
-        self.__en_taller: bool = False
+        # Asigna la patente del vehículo (tipo texto) a la instancia
+        self.patente: str = patente
+        # Asigna el año de fabricación (tipo entero) a la instancia
+        self.anio: int = anio
+        # Inicializa el atributo protegido que indica si está en taller en False (tipo booleano)
+        self._en_taller: bool = False
 
-    # Método para ingresar el vehículo al taller
+    # Método para registrar el ingreso del vehículo al taller
     def ingresar(self) -> None:
-        self.__en_taller = True
+        # Cambia el estado del atributo protegido a True indicando que está en el taller
+        self._en_taller = True
 
-    # Método para entregar el vehículo (sale del taller)
+    # Método para registrar la entrega y salida del vehículo del taller
     def entregar(self) -> None:
-        self.__en_taller = False
+        # Cambia el estado del atributo protegido a False indicando que ya no está en el taller
+        self._en_taller = False
 
-    @property
-    def patente(self) -> str:
-        return self.__patente
+    # Método para retornar la tarifa genérica por hora del vehículo
+    def tarifa_hora(self) -> int:
+        return 5000
 
-    @property
-    def anio(self) -> int:
-        return self.__anio
+    # Aliases por compatibilidad
+    def ingresar_al_taller(self) -> None:
+        self.ingresar()
+
+    def entregar_al_cliente(self) -> None:
+        self.entregar()
 
     @property
     def en_taller(self) -> bool:
-        return self.__en_taller
-
-    # Métodos alternativos por compatibilidad
-    def obtener_patente(self) -> str:
-        return self.patente
-
-    def obtener_anio(self) -> int:
-        return self.anio
-
-    def esta_en_taller(self) -> bool:
-        return self.en_taller
+        return self._en_taller
