@@ -15,10 +15,12 @@
 | :---: | :---: | :--- | :--- | :--- |
 | 1 | 2026-09-02 | Inicialización de repositorio y bitácora | Patricia Magaña | ✅ Completado |
 | 2 | 2026-09-07 | Creación de clase base `Vehiculo` en `vehiculo.py`, definición del constructor `__init__` con atributos (`patente`, `anio`, `_en_taller`), y métodos `ingresar()` y `entregar()`. | Patricia Magaña | ✅ Completado |
+| 3 | 2026-09-10 | Encapsulamiento y propiedades en `Vehiculo`, implementación de clase `LineaDetalle` en `linea_detalle.py`, y pruebas de múltiples instancias en `main.py`. | Patricia Magaña | ✅ Completado |
 
 ---
 
 ### 🎯 Objetivos y Pendientes
 - [x] Creación de repositorio y estructura inicial.
 - [x] Creación de la clase base `Vehiculo` con atributos y métodos de estado (`ingresar`, `entregar`).
+- [x] Encapsulamiento con atributos privados, `@property` y clase `LineaDetalle`.
 - [ ] Definición de requerimientos del sistema y subclases/módulos adicionales.
